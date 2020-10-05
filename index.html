@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors.</title>
+    </head>
+    <body>
+        <header>
+            <h1>Let's Play Rock Paper Scissors!</h1>
+        </header>
+
+        <button onclick="userInput"></button> Click Here To Begin</button>
+    <p id="demo"></p>
+
+    <script>
+
+    var txt;
+    var person = prompt("Hello new gamer! Insert how many rounds you want to play below:", "0");
+  
+    function convertToInt() {
+      var rounds = parseInt(person) + 0;
+    }
+
+    var txt; 
+    var userInput = prompt("To play, enter r, p, or s", "r");
+    if (userInput == null || userInput == "" || userInput <= 0) {
+      alert ("Invalid Response. Please Try Again Later.");
+    } else userInput = ['r', 'p','s']
+
+
+let personScore = 0;
+let computerScore = 0; 
+let draw = 0; 
+
+function playGame(humanInput) {
+    let personSelection = userInput.rounds;
+    let computerSelection = getComputerSelection();
+    let result = calcResult(personSelection, computerSelection);
+  }
+
+function getComputerSelection() {
+    const options = ['r', 'p', 's'];
+    let computerSelection = options [Math.floor(Math.random()*options.length)];
+    return computerSelection;
+}
+
+function calcResult() {
+      if (personSelection === computerSelection) { 
+      alert ("It's A Tie!");
+      draw +=1;
+      return;
+  } else ((userInput === 'r' && computerSelection === 's') || (userInput === 'p' && computerSelection === 'r') || (userInput === 's' && computerSelection === 'p')); {
+          personScore += 1;
+          alert ('Congratulations, you won this round!');
+          return;
+} if ((userInput === 's' && computerSelection === 'r') || (userInput === 'r' && computerSelection === 'p') || (userInput === 'p' && computerSelection === 's')); {
+            computerScore +=1;
+            alert ('Computer wins. Better luck next round.');
+            return;
+} if (computerScore && personScore == rounds); }
+            alert ('Congratulations! You won ' + personScore + "games. You lost " + computerScore + "games. You tied" + draw + "games. Thanks for Playing!"); {
+            endgame();
+}
+
+    </script>
+
+    <script src="main.js"></script>
+
+    </body>
+
+</html>
